@@ -10,10 +10,10 @@ public class SortServiceImpl implements SortService {
   @Override
   public int findMinValue(final List<Integer> numbers) {
     if (numbers.isEmpty()) {
-      throw new IllegalArgumentException("Список пуст");
+      throw new IllegalArgumentException("List is empty");
     }
 
-    int min = numbers.get(0);
+    int min = numbers.getFirst();
     for (int num : numbers) {
       if (num < min) {
         min = num;
@@ -25,10 +25,10 @@ public class SortServiceImpl implements SortService {
   @Override
   public int findMaxValue(final List<Integer> numbers){
     if (numbers.isEmpty()) {
-      throw new IllegalArgumentException("Список пуст");
+      throw new IllegalArgumentException("List is empty");
     }
 
-    int max = numbers.get(0);
+    int max = numbers.getFirst();
     for (int num : numbers) {
       if (num > max) {
         max = num;
@@ -40,7 +40,7 @@ public class SortServiceImpl implements SortService {
   @Override
   public double calculateAverage(final List<Integer> numbers) {
     if (numbers.isEmpty()) {
-      throw new IllegalArgumentException("Список пуст");
+      throw new IllegalArgumentException("List is empty");
     }
 
     int sum = 0;
@@ -54,10 +54,10 @@ public class SortServiceImpl implements SortService {
   @Override
   public  double calculateMedian(final List<Integer> numbers) {
     if (numbers.isEmpty()) {
-      throw new IllegalArgumentException("Список пуст");
+      throw new IllegalArgumentException("List is empty");
     }
 
-    Collections.sort(numbers); // Сортировка списка
+    Collections.sort(numbers);
 
     final int size = numbers.size();
     if (size % 2 == 1) {
@@ -75,7 +75,7 @@ public class SortServiceImpl implements SortService {
       return new ArrayList<>();
     }
 
-    List<Integer> currentSequence = new ArrayList<>();
+    final List<Integer> currentSequence = new ArrayList<>();
     List<Integer> maxSequence = new ArrayList<>();
 
     for (int i = 0; i < numbers.size(); i++) {
@@ -105,7 +105,7 @@ public class SortServiceImpl implements SortService {
       return new ArrayList<>();
     }
 
-    List<Integer> currentSequence = new ArrayList<>();
+    final List<Integer> currentSequence = new ArrayList<>();
     List<Integer> maxSequence = new ArrayList<>();
 
     for (int i = 0; i < numbers.size(); i++) {

@@ -15,7 +15,7 @@ public class Main {
     final FileService fileService = new FileServiceImpl();
     final SortService sortService = new SortServiceImpl();
 
-   final List<Integer> numbers = fileService.readFile(URL);
+    final List<Integer> numbers = fileService.readFile(URL);
 
     System.out.println("Longest increasing subsequence: " + sortService.findLongestIncreasingSubsequence(numbers));
     System.out.println("Longest decreasing subsequence: " + sortService.findLongestDecreasingSubsequence(numbers));
